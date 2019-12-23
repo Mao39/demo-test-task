@@ -1,13 +1,13 @@
-// Webpack v4
+// webpack v4
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: { main: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -15,27 +15,25 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: "babel-loader"
+        }
       },
       {
         test: /\.sass$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader'],
-          },
-        ),
-      },
-    ],
+        use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      }
+    ]
   },
   plugins: [
-    new ExtractTextPlugin("style.css"),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
-        inject: false,
-        hash: true,
-        template: './src/index.html',
-        filename: 'index.html'
-    })
+      inject: false,
+      hash: true,
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new WebpackMd5Hash()
   ]
 };
