@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Mao39/demo-test-task/issues"
   },
-  "homepage": "https://github.com/Mao39/demo-test-task#readme"
+  "homepage": "https://github.com/Mao39/demo-test-task#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7"
+  }
 }
