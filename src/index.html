@@ -1,9 +1,58 @@
 <html>
-  <head>
+
+<head>
+    <title>Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
-  </head>
-  <body>
-    <div>Hello, world!</div>
+</head>
+
+<body>
+    <div class="app">
+        <table class="table">
+            <tbody class="table-body">
+                <tr class="table-header">
+                    <th class="table-header__cell">id <button class="table-header__btn" data-target="1">▼</button></th>
+                    <th class="table-header__cell">firstName <button class="table-header__btn" data-target="2">▼</button></th>
+                    <th class="table-header__cell">lastName <button class="table-header__btn" data-target="3">▼</button></th>
+                    <th class="table-header__cell">email <button class="table-header__btn" data-target="4">▼</button></th>
+                    <th class="table-header__cell">phone <button class="table-header__btn" data-target="5">▼</button></th>
+                    <th class="table-header__cell">address <button class="table-header__btn" data-target="6">▼</button></th>
+                    <th class="table-header__cell">description <button class="table-header__btn" data-target="7">▼</button></th>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-row__cell" data-target="1">101</td>
+                    <td class="table-row__cell" data-target="2">Aue</td>
+                    <td class="table-row__cell" data-target="3">Corson</td>
+                    <td class="table-row__cell" data-target="4">test@test.ru</td>
+                    <td class="table-row__cell" data-target="5">8 (900) 000-00-00</td>
+                    <td class="table-row__cell" data-target="6">Russia, Russia, Russia</td>
+                    <td class="table-row__cell" data-target="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur,
+                        doloribus!</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-row__cell" data-target="1">102</td>
+                    <td class="table-row__cell" data-target="2">Bue</td>
+                    <td class="table-row__cell" data-target="3">Corson</td>
+                    <td class="table-row__cell" data-target="4">test@test.ru</td>
+                    <td class="table-row__cell" data-target="5">8 (900) 000-00-00</td>
+                    <td class="table-row__cell" data-target="6">Russia, Russia, Russia</td>
+                    <td class="table-row__cell" data-target="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur,
+                        doloribus!</td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-row__cell" data-target="1">103</td>
+                    <td class="table-row__cell" data-target="2">Cue</td>
+                    <td class="table-row__cell" data-target="3">Corson</td>
+                    <td class="table-row__cell" data-target="4">test@test.ru</td>
+                    <td class="table-row__cell" data-target="5">8 (900) 000-00-00</td>
+                    <td class="table-row__cell" data-target="6">Russia, Russia, Russia</td>
+                    <td class="table-row__cell" data-target="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur,
+                        doloribus!</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-  </body>
+</body>
+
 </html>
