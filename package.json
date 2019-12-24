@@ -8,7 +8,8 @@
     "babel-node": "babel-node",
     "build": "webpack --mode production",
     "prepublishOnly": "npm run build",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "start:dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "style-loader": "^1.1.1",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
     "webpack-md5-hash": "0.0.6"
   }
 }
