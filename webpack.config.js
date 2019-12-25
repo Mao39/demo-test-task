@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const isDevMode = 'production' !== process.env.NODE_ENV;
+
+const isDevMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: { main: './src/index.js' },
@@ -15,7 +16,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000
+    port: 9000,
   },
   module: {
     rules: [
@@ -28,25 +29,25 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [ isDevMode ? "style-loader" : MiniCssExtractPlugin.loader, {
+        use: [isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader, {
           loader: 'css-loader',
           options: {
-            sourceMap: true
-          }
+            sourceMap: true,
+          },
         }, {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: './postcss.config.js'
-              }
-            }
-          }, {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          }],
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            config: {
+              path: './postcss.config.js',
+            },
+          },
+        }, {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+          },
+        }],
       },
     ],
   },
